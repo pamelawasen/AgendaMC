@@ -9,6 +9,49 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity
+                android:name=".Activity.DiversosActivity"
+                android:label="@string/navigation_drawer_open"
+                android:parentActivityName=".Activity.HomeActivity">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".Activity.HomeActivity"/>
+        </activity>
+        <activity
+                android:name=".Activity.ConfigActivity"
+                android:label="@string/navigation_drawer_open"
+                android:parentActivityName=".Activity.HomeActivity">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".Activity.HomeActivity"/>
+        </activity>
+        <activity
+                android:name=".Activity.PedidosActivity"
+                android:label="@string/navigation_drawer_open"
+                android:parentActivityName=".Activity.HomeActivity">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".Activity.HomeActivity"/>
+        </activity>
+        <activity
+                android:name=".Activity.CadastroActivity"
+                android:label="@string/navigation_drawer_open"
+                android:parentActivityName=".Activity.HomeActivity">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".Activity.HomeActivity">
+            </meta-data>
+        </activity>
+        <activity android:name=".Activity.MainActivity">
+        </activity>
+        <activity
+                android:name=".Activity.BuscarActivity"
+                android:label="@string/navigation_drawer_open"
+                android:parentActivityName=".Activity.HomeActivity">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".Activity.HomeActivity"/>
+        </activity>
         <activity android:name=".Activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -22,8 +65,6 @@
                 android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
     </application>

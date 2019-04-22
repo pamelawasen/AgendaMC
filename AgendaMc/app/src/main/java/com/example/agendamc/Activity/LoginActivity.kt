@@ -35,6 +35,9 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
+    override fun onResume() {
+        super.onResume()
+    }
     private fun loginUser(email:String, password:String) {
 
        /* if (TextUtils.isEmpty(email)){
