@@ -21,22 +21,14 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setContentView(R.layout.activity_home)
         setSupportActionBar(toolbar)
 
-        btnCli.setOnClickListener {
-            clientcli(supportActionBar!!.title)
-        }
-        btnEstoque.setOnClickListener {
-            estoquecli(supportActionBar!!.title)
-        }
-
-        btnOrca.setOnClickListener {
-            orcacli(supportActionBar!!.title)
-        }
 
         val toggle = ActionBarDrawerToggle(
             this, drawer_layout, toolbar,
             R.string.navigation_drawer_open,
             R.string.navigation_drawer_close
         )
+
+
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
 
@@ -44,26 +36,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     }
 
-    private fun orcacli(titulo: CharSequence?) {
-        val intent7 = Intent(this, DiversosActivity::class.java)
-        startActivity(intent7)
-        val titulo ="Orçamento"
-        supportActionBar!!.title = titulo
-    }
 
-    private fun estoquecli(titulo1: CharSequence?) {
-        val titulo1 ="Estoque"
-        supportActionBar?.title = titulo1
-        val intent7 = Intent(this, DiversosActivity::class.java)
-        startActivity(intent7)
-    }
 
-    private fun clientcli(titulo2: CharSequence?) {
-        val titulo2 ="Cliente"
-        supportActionBar?.title = titulo2
-        val intent7 = Intent(this, DiversosActivity::class.java)
-        startActivity(intent7)
-    }
 
     override fun onBackPressed() {
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
@@ -73,8 +47,9 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.home, menu)
+        menuInflater.inflate(R.menu.menu, menu)
         return true
     }
 

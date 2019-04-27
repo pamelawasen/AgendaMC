@@ -7,12 +7,15 @@
         android:layout_height="match_parent"
         tools:context=".Activity.HomeActivity">
 
+
+
     <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay"/>
+
 
     <android.support.design.widget.AppBarLayout
             android:layout_height="wrap_content"
@@ -26,25 +29,6 @@
             android:layout_width="301dp"
             android:layout_gravity="center"
             android:layout_height="297dp" android:id="@+id/calendarView3"/>
-    <Button
-            android:text="Orçamentos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/btnOrca" android:layout_marginTop="550dp"
-            android:layout_marginLeft="40dp" android:textColorHighlight="@color/colorAccent"
-            android:textColor="@color/colorPrimary" style="@style/Widget.AppCompat.ActionBar.Solid"/>
-    <Button
-            android:text="Estoque"
-            android:layout_width="wrap_content"
-
-            android:layout_height="wrap_content" android:id="@+id/btnEstoque" android:layout_marginTop="550dp"
-            android:layout_marginLeft="170dp" app:layout_anchorGravity="top|center" app:layout_anchor="@+id/btnOrca"
-            style="@style/Widget.AppCompat.ActionBar.Solid" android:textColor="@color/colorPrimary"/>
-    <Button
-            android:text="Clientes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/btnCli" android:layout_marginLeft="270dp"
-            android:layout_marginTop="550dp" style="@style/Widget.AppCompat.ActionBar.Solid"
-            android:textColor="@color/colorPrimary"/>
 
 
 </android.support.design.widget.CoordinatorLayout>
