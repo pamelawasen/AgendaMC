@@ -2,16 +2,19 @@ package com.example.agendamc.Activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.Toast
 import com.example.agendamc.R
-import kotlinx.android.synthetic.main.activity_diversos.*
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.app_bar_home.*
+
 
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -27,6 +30,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.string.navigation_drawer_open,
             R.string.navigation_drawer_close
         )
+
+
 
 
         drawer_layout.addDrawerListener(toggle)
@@ -56,10 +61,18 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val intent6 = Intent(this, ConfigActivity::class.java)
         when (item.itemId) {
-            R.id.action_settings ->
-                startActivity(intent6)
+            R.id.action_buscar ->{
+                Toast.makeText(this@HomeActivity, "Botão de buscar",
+                    Toast.LENGTH_LONG).show()
         }
-        return true
+        R.id.action_atu ->{
+            progressBar?.visibility = View.VISIBLE
+            val handler = Handler()
+            handler.postDelayed({progressBar?.visibility = View.GONE},10000)
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -89,4 +102,5 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
+
 }

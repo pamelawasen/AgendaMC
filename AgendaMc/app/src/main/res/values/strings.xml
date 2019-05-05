@@ -9,6 +9,7 @@
     <string name="action_fornecedor">Fornecedor</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="action_buscar">action_buscar</string>
+    <string name="action_atualizar">action_atualizar</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

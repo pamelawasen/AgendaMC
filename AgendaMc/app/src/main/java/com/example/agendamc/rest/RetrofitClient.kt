@@ -10,7 +10,7 @@ object RetrofitClient {
     fun getInstance(): Retrofit {
         if (instance == null)
             instance = Retrofit.Builder()
-                .baseUrl("http://localhost:3000/")
+                .baseUrl("http://192.168.15.13:3000")
                 .addConverterFactory(ScalarsConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()

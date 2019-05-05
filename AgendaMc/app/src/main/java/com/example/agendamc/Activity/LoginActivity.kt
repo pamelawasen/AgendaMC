@@ -10,10 +10,13 @@ import kotlinx.android.synthetic.main.activity_login.*
 import javax.inject.Inject
 import android.content.Intent
 import com.example.agendamc.R
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
+import retrofit2.Call
 
 class LoginActivity : AppCompatActivity() {
     @Inject
-    lateinit var Loginservice:Loginservice
+    lateinit var Loginservice: Loginservice
     private var compositeDisposable = CompositeDisposable()
 
 
@@ -25,42 +28,34 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        val retrofit= RetrofitClient.getInstance()
+        val retrofit = RetrofitClient.getInstance()
         Loginservice = retrofit.create(com.example.agendamc.rest.Loginservice::class.java)
 
         btnEntrar.setOnClickListener {
-            loginUser(editEmail.text.toString(), editPassword.text.toString())
+            loginUser(editEndereço.text.toString(), editPassword.text.toString())
 
         }
 
     }
 
-    override fun onResume() {
-        super.onResume()
-    }
-    private fun loginUser(email:String, password:String) {
 
-       /* if (TextUtils.isEmpty(email)){
-            Toast.makeText(this@LoginActivity,"Email incorreto", Toast.LENGTH_SHORT).show()
-            return
+    private fun loginUser(email: String, password: String) {
+
+        if (email != "aluno" && password != "impacta") {
+            Toast.makeText(this@LoginActivity, "Usuario ou senha incorretos", Toast.LENGTH_SHORT).show()
+
+        } else {
+            compositeDisposable.add(Loginservice.loginUser(email, password)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe { result: String ->
+                    Toast.makeText(this@LoginActivity, "Logado", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, HomeActivity::class.java)
+                    startActivity(intent)
+                }
+
+            )
         }
 
-        if (TextUtils.isEmpty(password)){
-            Toast.makeText(this@LoginActivity,"Senha incorreta", Toast.LENGTH_SHORT).show()
-            return
-        }*/
-        if(email == "aluno" && password == "impacta") {
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
-        }else{
-            Toast.makeText(this@LoginActivity,"Usuario ou senha incorretos",Toast. LENGTH_SHORT).show()
-        }
-        /*compositeDisposable.add(Loginservice.loginUser(email,password)
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe { result ->
-                Toast.makeText(this@LoginActivity,""+result, Toast.LENGTH_SHORT).show()
-            }
-        )*/
     }
 }

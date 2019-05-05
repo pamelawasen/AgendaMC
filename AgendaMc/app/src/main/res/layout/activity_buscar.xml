@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+
+<android.support.constraint.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,45 +8,31 @@
         android:layout_height="match_parent"
         tools:context=".Activity.BuscarActivity">
 
-    <android.support.v7.widget.Toolbar
-            android:layout_width="411dp"
-            android:layout_height="wrap_content" tools:ignore="MissingConstraints"
-            android:id="@+id/toolbar3"
-            android:background="@color/colorPrimary"
-    />
+    <include layout="@layout/tollbar"/>
 
-    <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
+
+    <EditText
+            android:layout_width="289dp"
+            android:layout_height="54dp"
+            android:inputType="textPersonName"
+            android:layout_gravity="center_horizontal"
+            android:ems="10"
+            android:id="@+id/editBusca" android:layout_weight="1"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginBottom="76dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnBuscar" android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp" android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp"
+            android:hint="Busca"/>
+    <Button
+            android:text="Buscar"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/cv"
-            app:cardBackgroundColor="@color/colorPrimaryDark">
-
-        <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-        >
+            android:id="@+id/btnBuscar" style="@style/Base.Widget.AppCompat.Button"
+            android:textColorHint="@color/colorPrimaryDark" android:textColor="@color/colorPrimaryDark"
+            android:layout_marginEnd="100dp"
+            app:layout_constraintEnd_toEndOf="@+id/editBusca" android:layout_marginRight="100dp"
+            android:layout_marginBottom="352dp" app:layout_constraintBottom_toBottomOf="parent"/>
 
 
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sacada"
-                    android:id="@+id/person_name"
-                    android:layout_alignParentTop="true"
-                    android:textSize="30sp"
-            />
-
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/person_age"
-                    android:layout_below="@+id/person_name"
-            />
-
-        </RelativeLayout>
-
-    </android.support.v7.widget.CardView>
-
-
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>

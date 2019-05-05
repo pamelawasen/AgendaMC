@@ -8,6 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
 
     </style>
+
+    <style name="EditTextLoginTheme" parent="AppTheme">
+        <item name="android:maxLines">1</item>
+        <item name="backgroundTint">@color/colorcontr</item>
+    </style>
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
