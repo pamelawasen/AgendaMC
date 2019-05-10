@@ -32,14 +32,29 @@ class LoginActivity : AppCompatActivity() {
         Loginservice = retrofit.create(com.example.agendamc.rest.Loginservice::class.java)
 
         btnEntrar.setOnClickListener {
-            loginUser(editEndereço.text.toString(), editPassword.text.toString())
+            loginUser(editUsuario.text.toString(), editPassword.text.toString())
 
         }
+
+        editUsuario.setText(Prefs.getString("lembrarUsuario"))
+        editPassword.setText(Prefs.getString("LembrarSenha"))
+        checkBoxLembrar.isChecked = Prefs.getBoollean("checkLembrar")
 
     }
 
 
     private fun loginUser(email: String, password: String) {
+
+        Prefs.setBoolean("checkLembrar", checkBoxLembrar.isChecked)
+
+        if (checkBoxLembrar.isChecked){
+            Prefs.setString("lembrarUsuario",editUsuario.text.toString())
+            Prefs.setString("LembrarSenha", editPassword.text.toString())
+
+        }else{
+            Prefs.setString("lembrarUsuario","")
+            Prefs.setString("LembrarSenha","")
+        }
 
         if (email != "aluno" && password != "impacta") {
             Toast.makeText(this@LoginActivity, "Usuario ou senha incorretos", Toast.LENGTH_SHORT).show()

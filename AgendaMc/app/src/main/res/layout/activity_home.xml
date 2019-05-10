@@ -3,10 +3,12 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
+        app:itemTextColor="#fff"
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
+        android:background="@color/colortext"
         tools:openDrawer="start">
 
     <include
@@ -19,6 +21,10 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="start"
+            app:itemTextColor="#fff"
+            app:itemIconTint="@color/colorcontr"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:background="@color/colortext"
             android:fitsSystemWindows="true"
             app:headerLayout="@layout/nav_header_home"
             app:menu="@menu/activity_home_drawer"/>

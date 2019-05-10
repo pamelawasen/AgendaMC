@@ -5,21 +5,22 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colortext"
         tools:context=".Activity.HomeActivity">
-
 
 
     <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:background="?attr/colorPrimaryDark"
             app:popupTheme="@style/AppTheme.PopupOverlay"/>
 
     <ProgressBar
             android:id="@+id/progressBar"
             style="?android:attr/progressBarStyle"
-            android:visibility="gone"
+            android:visibility="invisible"
+            android:background="@color/colorPrimaryDark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -29,14 +30,24 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:theme="@style/AppTheme.AppBarOverlay">
-
-
     </android.support.design.widget.AppBarLayout>
 
     <CalendarView
             android:layout_width="301dp"
+            android:textColor="@color/colorcontr"
+            android:id="@+id/calendarView3"
+            android:background="@color/colorcontr"
             android:layout_gravity="center"
-            android:layout_height="297dp" android:id="@+id/calendarView3"/>
+            android:layout_height="297dp"
+            android:theme="@style/AppTheme"
+    />
+    <TextView
+            android:text="Agendamentos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView6"
+            android:layout_marginTop="100dp"
+            android:layout_marginLeft="120dp" android:textColor="@color/colorcontr" android:textStyle="bold"/>
 
 
 </android.support.design.widget.CoordinatorLayout>

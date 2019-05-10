@@ -6,6 +6,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colortext"
         tools:context=".Activity.BuscarActivity">
 
     <include layout="@layout/tollbar"/>
@@ -13,23 +14,31 @@
 
     <EditText
             android:layout_width="289dp"
+            style="@style/EditTextLoginTheme"
             android:layout_height="54dp"
+            android:textColorHint="@color/colorcontr"
+            android:textColorLink="@color/colorPrimaryDark"
             android:inputType="textPersonName"
             android:layout_gravity="center_horizontal"
             android:ems="10"
             android:id="@+id/editBusca" android:layout_weight="1"
-            android:textColor="@color/colorPrimaryDark"
-            android:layout_marginBottom="76dp"
-            app:layout_constraintBottom_toTopOf="@+id/btnBuscar" android:layout_marginStart="8dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp" android:layout_marginEnd="8dp"
+            android:textColor="@color/colorcontr"
+            android:layout_marginBottom="72dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnBuscar"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="8dp" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp"
             android:hint="Busca"/>
     <Button
             android:text="Buscar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnBuscar" style="@style/Base.Widget.AppCompat.Button"
-            android:textColorHint="@color/colorPrimaryDark" android:textColor="@color/colorPrimaryDark"
+            android:id="@+id/btnBuscar"
+            style="@style/Base.Widget.AppCompat.Button"
+            android:textColorLink="@color/colortext"
+            android:textColorHint="@color/colortext"
+            android:textColor="@color/colorPrimaryDark"
             android:layout_marginEnd="100dp"
             app:layout_constraintEnd_toEndOf="@+id/editBusca" android:layout_marginRight="100dp"
             android:layout_marginBottom="352dp" app:layout_constraintBottom_toBottomOf="parent"/>

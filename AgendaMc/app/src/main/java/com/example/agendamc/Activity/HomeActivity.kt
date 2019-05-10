@@ -53,7 +53,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+    /*override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu, menu)
         return true
     }
@@ -73,7 +73,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
         return super.onOptionsItemSelected(item)
-    }
+    }*/
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // visualização de menu lateral.

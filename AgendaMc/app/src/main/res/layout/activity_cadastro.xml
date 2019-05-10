@@ -5,12 +5,17 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colortext"
         tools:context=".Activity.CadastroActivity">
 
     <include layout="@layout/tollbar" />
     
     <EditText
             android:layout_width="215dp"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textColorLink="@color/colorPrimaryDark"
+            android:textColor="@color/colorcontr"
+            style="@style/EditTextLoginTheme"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
@@ -22,6 +27,10 @@
             android:layout_marginStart="1dp"/>
     <EditText
             android:layout_width="215dp"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textColorLink="@color/colorPrimaryDark"
+            android:textColor="@color/colorcontr"
+            style="@style/EditTextLoginTheme"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:ems="10"
@@ -32,6 +41,10 @@
             android:layout_marginStart="1dp" app:layout_constraintBottom_toTopOf="@+id/editCelphone"/>
     <EditText
             android:layout_width="216dp"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textColorLink="@color/colorPrimaryDark"
+            android:textColor="@color/colorcontr"
+            style="@style/EditTextLoginTheme"
             android:layout_height="wrap_content"
             android:inputType="phone"
             android:drawableLeft="@drawable/ic_action_phone"
@@ -42,6 +55,10 @@
             android:layout_marginTop="264dp" app:layout_constraintEnd_toEndOf="parent"/>
     <EditText
             android:layout_width="216dp"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textColorLink="@color/colorPrimaryDark"
+            android:textColor="@color/colorcontr"
+            style="@style/EditTextLoginTheme"
             android:layout_height="wrap_content"
             android:inputType="date"
             android:drawableLeft="@drawable/ic_action_data"
@@ -52,18 +69,27 @@
             app:layout_constraintTop_toBottomOf="@+id/editCelphone"/>
     <Button
             android:text="Cadastrar"
+            style="@style/Base.Widget.AppCompat.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btncadastraPedido"
+            android:textColorLink="@color/colortext"
+            android:textColorHint="@color/colortext"
+            android:textColor="@color/colorPrimaryDark"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="59dp"
             app:layout_constraintTop_toBottomOf="@+id/editTipodeservico" app:layout_constraintEnd_toEndOf="parent"
-            style="@style/Widget.AppCompat.ActionBar.Solid" android:textColor="@color/colorPrimary"/>
+            />
     <EditText
             android:layout_width="216dp"
+            android:textColorHint="@color/colorPrimaryDark"
+            android:textColorLink="@color/colorPrimaryDark"
+            android:textColor="@color/colorcontr"
+            style="@style/EditTextLoginTheme"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/editTipodeservico" android:hint="Tipo de serviço"
+            android:id="@+id/editTipodeservico"
+            android:hint="Tipo de serviço"
             android:drawableLeft="@drawable/ic_action_serv"
             app:layout_constraintStart_toStartOf="@+id/editData" android:layout_marginLeft="1dp"
             android:layout_marginStart="1dp" app:layout_constraintTop_toBottomOf="@+id/editData"/>
@@ -71,9 +97,9 @@
             android:text="Novo Orçamento"
             android:layout_width="154dp"
             android:layout_height="32dp"
-            android:id="@+id/textView5" android:textColor="@color/colorPrimary"
+            android:id="@+id/textView5" android:textColor="@color/colorcontr"
             app:layout_constraintEnd_toEndOf="@+id/editNomecli"
             app:layout_constraintStart_toStartOf="@+id/editNomecli" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/editNomecli" android:layout_marginTop="8dp"
-            />
+            app:layout_constraintBottom_toTopOf="@+id/editNomecli"
+            android:textSize="14sp"/>
 </android.support.constraint.ConstraintLayout>
