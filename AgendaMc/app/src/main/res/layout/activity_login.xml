@@ -91,7 +91,7 @@
         <CheckBox
                 android:id="@+id/checkBoxLembrar"
                 android:buttonTint="@color/colorcontr"
-                android:text="Lembrar Senha"
+                android:text="Lembrar Usuario e Senha"
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
                 android:textColor="@color/colorcontr"

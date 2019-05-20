@@ -11,6 +11,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
+import com.example.agendamc.Notificationpush
 import com.example.agendamc.R
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.app_bar_home.*
@@ -102,5 +103,11 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
+    fun enviarNotification(pedido:PedidosList){
+        val intent = Intent(this, PedidosActivity::class.java)
+        intent.putExtra("pedidos",pedido)
+        Notificationpush.create(1,intent,"Novo pedido","Pedidos")
+    }
 
 }
+

@@ -1,10 +1,13 @@
 package com.example.agendamc.rest
 
 import android.content.Context
+import android.os.Build
+import android.support.annotation.RequiresApi
 import android.util.Log
 import com.example.agendamc.Activity.PedidosList
 import com.example.agendamc.Activity.Response
 import com.example.agendamc.Adpters.adapterPedidos
+import com.example.agendamc.Persistencia.DatabaseManager
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.net.URL
@@ -12,17 +15,31 @@ import java.net.URL
 
 object ListapedidosService {
 
-    val host = "http://192.168.15.13:3000"
-    val TAG = "WS_LMSApp"
+    val host = "http://172.20.1.35:3000"
+    val TAG = "WS_App"
+    val dao = DatabaseManager.getPeidoDAO()
+
 
         fun getListapedidos(context: Context):List<PedidosList> {
 
-            val url = "$host/get/orders"
-            val json = HttpHelper.get(url)
+            @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+            if (AndroidUtils.isInternetDisponivel(context)) {
 
-            Log.d(TAG, json)
+                val url = "$host/get/orders"
+                val json = HttpHelper.get(url)
+                val pedidos: List<PedidosList> = parserJson(json)
 
-            return parserJson(json)
+                for (d in pedidos) {
+                    if(dao.getById(d.id)== null){
+                        dao.insert(d)
+                    }
+
+                }
+                return pedidos
+            }else{
+                return dao.findAll()
+            }
+
         }
             fun save(pedido:PedidosList):Response{
                 var json = HttpHelper.post("$host/order",pedido.toJson())

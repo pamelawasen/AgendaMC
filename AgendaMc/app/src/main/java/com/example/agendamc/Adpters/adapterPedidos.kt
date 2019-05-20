@@ -15,7 +15,7 @@ import java.text.FieldPosition
 
 class adapterPedidos (
 
-    val pedido:List<PedidosList>,
+    val     pedido:List<PedidosList>,
     val onclick:(PedidosList) -> Unit):RecyclerView.Adapter<adapterPedidos.ListapedidosViewHolder>(){
 
     class ListapedidosViewHolder(view: View):RecyclerView.ViewHolder(view){
@@ -32,7 +32,7 @@ class adapterPedidos (
         }
     }
     //mostra a quantidade da lista
-    override fun getItemCount()= this.pedido.size
+        override fun getItemCount()= this.pedido.size
 
     //infla o layout adapter
     override fun onCreateViewHolder(parent:ViewGroup,viewType:Int): ListapedidosViewHolder {

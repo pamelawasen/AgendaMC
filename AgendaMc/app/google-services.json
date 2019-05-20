@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "412639620019",
+    "firebase_url": "https://agendamc-2b4ac.firebaseio.com",
+    "project_id": "agendamc-2b4ac",
+    "storage_bucket": "agendamc-2b4ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:412639620019:android:8ea696519cc6036d",
+        "android_client_info": {
+          "package_name": "com.example.agendamc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "412639620019-jm6soqpdn0vhoidjcjp2t0kdd97iscsq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-ZrIGnP52vHIZx-MkanaibVu8iqif0BE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "412639620019-jm6soqpdn0vhoidjcjp2t0kdd97iscsq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

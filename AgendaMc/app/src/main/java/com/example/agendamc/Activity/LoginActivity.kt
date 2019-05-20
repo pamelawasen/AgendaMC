@@ -56,10 +56,7 @@ class LoginActivity : AppCompatActivity() {
             Prefs.setString("LembrarSenha","")
         }
 
-        if (email != "aluno" && password != "impacta") {
-            Toast.makeText(this@LoginActivity, "Usuario ou senha incorretos", Toast.LENGTH_SHORT).show()
-
-        } else {
+        if (email == "aluno" && password == "impacta"){
             compositeDisposable.add(Loginservice.loginUser(email, password)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -70,6 +67,8 @@ class LoginActivity : AppCompatActivity() {
                 }
 
             )
+        }else{
+            Toast.makeText(this@LoginActivity, "Usuario ou senha incorretos", Toast.LENGTH_SHORT).show()
         }
 
     }

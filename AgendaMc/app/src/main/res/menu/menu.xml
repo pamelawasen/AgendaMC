@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 
     <menu xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:app="http://schemas.android.com/apk/res-auto">
-        <item android:id="@+id/action_buscar"
-              android:icon="@drawable/ic_action_name"
-              android:title="@string/action_buscar"
-              app:showAsAction="always" />
-        <item
-                android:id="@+id/action_atu"
-                android:icon="@drawable/ic_action_atualizar"
-                android:title="@string/action_atualizar"
-                app:showAsAction="always" />
-        <item
-        android:id="@+id/action_cadastro"
-        android:icon="@drawable/ic_action_cadastro"
-        android:title="action_cadastro"
-        app:showAsAction="always"/>
+              xmlns:app="http://schemas.android.com/apk/res-auto">
+            <item android:id="@+id/action_buscar"
+                  android:icon="@drawable/ic_action_name"
+                  android:title="@string/action_buscar"
+                  app:showAsAction="always" />
+            <item
+                    android:id="@+id/action_atu"
+                    android:icon="@drawable/ic_action_atualizar"
+                    android:title="@string/action_atualizar"
+                    app:showAsAction="always" />
+            <item
+            android:id="@+id/action_cadastro"
+            android:icon="@drawable/ic_action_cadastro"
+            android:title="action_cadastro"
+            app:showAsAction="always"/>
 
     </menu>

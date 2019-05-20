@@ -10,7 +10,7 @@ import java.net.URL
 
 object HttpHelper {
 
-    private val TAG = "HTTP_LMSApp"
+    private val TAG = "HTTP_App"
     private val LOG_ON = true
     val JSON = MediaType.parse("application/json; charset=utf-8")
 

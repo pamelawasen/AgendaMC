@@ -8,12 +8,12 @@ import android.os.Handler
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
 import com.example.agendamc.Adpters.adapterPedidos
+import com.example.agendamc.Notificationpush
 import com.example.agendamc.R
 import com.example.agendamc.rest.ListapedidosService
 import kotlinx.android.synthetic.main.activity_pedidos.*
@@ -68,9 +68,15 @@ class PedidosActivity : AppCompatActivity() {
             this.pedidos = ListapedidosService.getListapedidos(context)
             runOnUiThread {
                 recyclerpedidos?.adapter = adapterPedidos(this.pedidos) {onClickPedidos(it) }
+                enviarNotification(this.pedidos.get(0))
             }
         }.start()
 
+    }
+    fun enviarNotification(pedido:PedidosList){
+        val intent = Intent(this, PedidosActivity::class.java)
+        intent.putExtra("pedidos",pedido)
+        Notificationpush.create(1,intent,"Novo pedido","Pedidos")
     }
 
        /* pedidos = ListapedidosService.getListapedidos(context)
